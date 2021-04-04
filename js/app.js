@@ -19,8 +19,8 @@ let Seattle = {
         for (let i = 0; i < Seattle.CustomersNum.length; i++) {
           let  mult=this.CustomersNum[i] * this.averageCookies;
          mult=Math.floor(mult)
-          this.CookieNum.push(`${mult} cookies`);
-         this.total+=mult
+          this.CookieNum.push(mult);
+         this.total+=this.CookieNum[i]
         }
     },
     
@@ -36,8 +36,6 @@ console.log(Seattle.CustomersNum);
 Seattle.getCookieNum();
 console.log(Seattle.CookieNum);
 
-Seattle.getCookieNum();
-console.log(Seattle.cookieNum);
  
 console.log(Seattle.total)
 
@@ -79,7 +77,7 @@ for(let i =0;i<Seattle.openningHours.length;i++){
 
 let totalElement=document.createElement("li");
 ulElement.appendChild(totalElement);
-totalElement.textContent= `total = ${Seattle.total} cookies`;
+totalElement.textContent= `total : ${Seattle.total} cookies`;
 
 
 
@@ -108,8 +106,8 @@ let tokyo = {
         for (let i = 0; i < tokyo.CustomersNum.length; i++) {
           let  mult=this.CustomersNum[i] * this.averageCookies;
          mult=Math.floor(mult)
-          this.CookieNum.push(`${mult} cookies`);
-         this.total+=mult
+          this.CookieNum.push(mult);
+         this.total+=this.CookieNum[i]
         }
     },
     
@@ -125,8 +123,7 @@ console.log(tokyo.CustomersNum);
 tokyo.getCookieNum();
 console.log(tokyo.CookieNum);
 
-tokyo.getCookieNum();
-console.log(tokyo.cookieNum);
+
  
 console.log(tokyo.total)
 
@@ -169,7 +166,7 @@ for(let i =0;i<tokyo.openningHours.length;i++){
 
 let TtotalElement=document.createElement("li");
 TulElement.appendChild(TtotalElement);
-TtotalElement.textContent= `total = ${tokyo.total} cookies`;
+TtotalElement.textContent= `total : ${tokyo.total} cookies`;
 
 
 
@@ -213,9 +210,7 @@ console.log(dubai.CustomersNum);
 dubai.getCookieNum();
 console.log(dubai.CookieNum);
 
-dubai.getCookieNum();
-console.log(dubai.cookieNum);
- 
+
 console.log(dubai.total)
 
 // get (from the DOM) who the parent element is going to be. where am I attaching this new element
@@ -257,7 +252,7 @@ for(let i =0;i<dubai.openningHours.length;i++){
 
 let DtotalElement=document.createElement("li");
 DulElement.appendChild(DtotalElement);
-DtotalElement.textContent= `total = ${dubai.total} cookies`;
+DtotalElement.textContent= `total : ${dubai.total} cookies`;
 
 
 
@@ -302,8 +297,7 @@ console.log(paris.CustomersNum);
 paris.getCookieNum();
 console.log(paris.CookieNum);
 
-paris.getCookieNum();
-console.log(paris.cookieNum);
+
  
 console.log(paris.total)
 
@@ -346,7 +340,7 @@ for(let i =0;i<paris.openningHours.length;i++){
 
 let PtotalElement=document.createElement("li");
 PulElement.appendChild(PtotalElement);
-PtotalElement.textContent= `total = ${paris.total} cookies`;
+PtotalElement.textContent= `total : ${paris.total} cookies`;
 
 
 
@@ -389,8 +383,7 @@ console.log(lima.CustomersNum);
 lima.getCookieNum();
 console.log(lima.CookieNum);
 
-lima.getCookieNum();
-console.log(lima.cookieNum);
+
  
 console.log(lima.total)
 
@@ -433,7 +426,7 @@ for(let i =0;i<lima.openningHours.length;i++){
 
 let LtotalElement=document.createElement("li");
 LulElement.appendChild(LtotalElement);
-LtotalElement.textContent= `total = ${lima.total} cookies`;
+LtotalElement.textContent= `total : ${lima.total} cookies`;
 
 
 
