@@ -1,0 +1,39 @@
+
+div {
+
+    padding-top: 5rem;
+    padding-left: 2rem;
+}
+
+#parent table tr{
+    border:solid black 2px;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}
+#parent table{
+    border: black solid 2px;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+#parent table tr th{
+    border: black solid 2px;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+#parent table tfoot td{
+    border: black solid 2px;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}
+#parent table tr td{
+    border: black solid 2px;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}

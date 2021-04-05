@@ -1,437 +1,141 @@
 'use strict';
 
-let Seattle = {
-    CustomersNum: [],
-    openningHours: ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'],
-    averageCookies: 6.3,
-    minCustomers: 23,
-    maxCustomers: 65,
-    CookieNum: [],
-    total:0,
-    name: 'Seattle',
-    getCustomerNum: function () {
-        for (let i = 0; i < Seattle.openningHours.length; i++)
 
-            this.CustomersNum.push(getRndInteger(this.minCustomers, this.maxCustomers))
+let openningHours=['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
+let storesArra =[];
 
-    },
-    getCookieNum: function () {
-        for (let i = 0; i < Seattle.CustomersNum.length; i++) {
-          let  mult=this.CustomersNum[i] * this.averageCookies;
-         mult=Math.floor(mult)
-          this.CookieNum.push(mult);
-         this.total+=this.CookieNum[i]
-        }
-    },
-    
+function Stores(name, minCustomers , maxCustomers, averageCookies ){
+this.name= name;
+this.minCustomers=minCustomers;
+this.maxCustomers=maxCustomers;
+this.averageCookies=averageCookies;
+this.CustomersNum=[];
+this.CookieNum=[];
+this.total=0;
 
-}
+storesArra.push(this)
+};
+console.log(storesArra)
+
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-Seattle.getCustomerNum();
-console.log(Seattle.CustomersNum);
 
-Seattle.getCookieNum();
-console.log(Seattle.CookieNum);
 
- 
-console.log(Seattle.total)
+Stores.prototype.getCustomerNum=function() { 
+    for (let i = 0; i <openningHours.length; i++){
 
-// get (from the DOM) who the parent element is going to be. where am I attaching this new element
+        this.CustomersNum.push(getRndInteger(this.minCustomers, this.maxCustomers));
+
+    }
+
+ }
+
+ Stores.prototype.getCookieNum= function () {
+    for (let i = 0; i < this.CustomersNum.length; i++) {
+      let  mult=this.CustomersNum[i] * this.averageCookies;
+     mult=Math.floor(mult)
+      this.CookieNum.push(mult);
+     this.total+=this.CookieNum[i]
+    }
+}
+
+let seattle = new Stores('Seattle', 23, 65 , 6.3 );
+console.log(seattle);
+seattle.getCustomerNum();
+seattle.getCookieNum();
+
+
+
+let tokyo =new Stores('Tokyo', 3, 24, 1.2);
+tokyo.getCustomerNum();
+tokyo.getCookieNum();
+console.log(tokyo);
+
+let dubai=new Stores('Dubai', 11, 38, 3.7);
+dubai.getCustomerNum();
+dubai.getCookieNum();
+console.log(dubai);
+
+let paris=new Stores('Paris',20 ,38 ,2.3 );
+paris.getCustomerNum();
+paris.getCookieNum();
+console.log(paris);
+
+let lima=new Stores('Lima', 2, 16 ,4.6 );
+lima.getCustomerNum();
+lima.getCookieNum();
+console.log(lima);
+
+
+
 
 let parent=document.getElementById('parent');
-console.log(parent);
-
-
-// creating element
-let h2Element=document.createElement('h2');
-
-// appending element
-parent.appendChild(h2Element);
-
-// text content
-h2Element.textContent=Seattle.name;
+let table=document.createElement('table');
+parent.appendChild(table);
 
 
 
-// create ul
-let ulElement=document.createElement('ul');
 
-// append
-parent.appendChild(ulElement);
-
- 
-for(let i =0;i<Seattle.openningHours.length;i++){
-    // create li
-    let liElement=document.createElement('li');
-
-    // appending li
-    ulElement.appendChild(liElement);
-
-    // text content
-    liElement.textContent=`${Seattle.openningHours[i]}  : ${Seattle.CookieNum[i]} cookies`;
-
+//creat the header for the table:
+let tr=document.createElement('tr')
+table.appendChild(tr)
+let headerHoures=[' ','6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', 'Daily location total'];
+for(let i=0; i< headerHoures.length;i++){
+    let th=document.createElement('th')
+    tr.appendChild(th)
+    th.textContent=headerHoures[i]
 }
 
-let totalElement=document.createElement("li");
-ulElement.appendChild(totalElement);
-totalElement.textContent= `total : ${Seattle.total} cookies`;
 
+Stores.prototype.render= function(){
+    let shopeTr=document.createElement('tr')
+    table.appendChild(shopeTr)
+    let td=document.createElement('td')
+    shopeTr.appendChild(td)
+   td.textContent=this.name
 
-
-
-
-
-//Tokyo
-
-let tokyo = {
-    CustomersNum: [],
-    openningHours: ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'],
-    averageCookies: 1.2,
-    minCustomers: 3,
-    maxCustomers:24 ,
-    CookieNum: [],
-    total:0,
-    name: 'Tokyo',
-
-    getCustomerNum: function () {
-        for (let i = 0; i < tokyo.openningHours.length; i++)
-
-            this.CustomersNum.push(getRndInteger(this.minCustomers, this.maxCustomers))
-
-    },
-    getCookieNum: function () {
-        for (let i = 0; i < tokyo.CustomersNum.length; i++) {
-          let  mult=this.CustomersNum[i] * this.averageCookies;
-         mult=Math.floor(mult)
-          this.CookieNum.push(mult);
-         this.total+=this.CookieNum[i]
-        }
-    },
+    for(let i=0; i<openningHours.length;i++){
+       let cookiesTd=document.createElement('td')
+       shopeTr.appendChild(cookiesTd)
+       cookiesTd.textContent=this.CookieNum[i]
+       
+    }
+    let dailyTotalTd= document.createElement('td')
+    shopeTr.appendChild(dailyTotalTd)
+    dailyTotalTd.textContent=this.total
     
-
 }
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+// creat footer 
+let footer = document.createElement('tfoot');
+let tdFooterT=document.createElement('td');
+footer.appendChild(tdFooterT);
+tdFooterT.textContent='total'
+let sumPerHour=[];
+for (let i = 0; i < openningHours.length; i++) {
+    let tdFooter=document.createElement('td');
+footer.appendChild(tdFooter);
+let sumPerHourT=  seattle.CookieNum[i]+tokyo.CookieNum[i]+dubai.CookieNum[i]+paris.CookieNum[i]+lima.CookieNum[i];
+sumPerHour.push(sumPerHourT);
+tdFooter.textContent=sumPerHourT;
 }
+table.appendChild(footer);
 
-tokyo.getCustomerNum();
-console.log(tokyo.CustomersNum);
-
-tokyo.getCookieNum();
-console.log(tokyo.CookieNum);
-
-
- 
-console.log(tokyo.total)
-
-// get (from the DOM) who the parent element is going to be. where am I attaching this new element
-
-let parent2=document.getElementById('parent2');
-console.log(parent2);
-
-
-
-// creating element
-let Th2Element=document.createElement('h2');
-
-// appending element
-parent2.appendChild(Th2Element);
-
-// text content
-Th2Element.textContent=tokyo.name;
-
-
-
-// create ul
-let TulElement=document.createElement('ul');
-
-// append
-parent2.appendChild(TulElement);
-
- 
-for(let i =0;i<tokyo.openningHours.length;i++){
-    // create li
-    let liElement=document.createElement('li');
-
-    // appending li
-    TulElement.appendChild(liElement);
-
-    // text content
-    liElement.textContent=`${tokyo.openningHours[i]}  : ${tokyo.CookieNum[i]} cookie`;
-
-}
-
-let TtotalElement=document.createElement("li");
-TulElement.appendChild(TtotalElement);
-TtotalElement.textContent= `total : ${tokyo.total} cookies`;
-
-
-
-
-//Dubai
-
-let dubai= {
-    CustomersNum: [],
-    openningHours: ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'],
-    averageCookies:3.7 ,
-    minCustomers: 11,
-    maxCustomers: 38,
-    CookieNum: [],
-    total:0,
-    name: 'Dubai',
-
-    getCustomerNum: function () {
-        for (let i = 0; i < dubai.openningHours.length; i++)
-
-            this.CustomersNum.push(getRndInteger(this.minCustomers, this.maxCustomers))
-
-    },
-    getCookieNum: function () {
-        for (let i = 0; i < dubai.CustomersNum.length; i++) {
-          let  mult=this.CustomersNum[i] * this.averageCookies;
-         mult=Math.floor(mult)
-          this.CookieNum.push(mult);
-         this.total+=mult
-        }
-    },
+ let totalOfTotal=0
+let tdFooterTotal=document.createElement('td');
+footer.appendChild(tdFooterTotal);
+for (let i = 0; i < openningHours.length; i++) {
+    totalOfTotal+=sumPerHour[i];
     
-
 }
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+tdFooterTotal.textContent=totalOfTotal;
 
-dubai.getCustomerNum();
-console.log(dubai.CustomersNum);
 
-dubai.getCookieNum();
-console.log(dubai.CookieNum);
 
-
-console.log(dubai.total)
-
-// get (from the DOM) who the parent element is going to be. where am I attaching this new element
-
-let parent3=document.getElementById('parent3');
-console.log(parent3);
-
-
-
-// creating element
-let Dh2Element=document.createElement('h2');
-
-// appending element
-parent3.appendChild(Dh2Element);
-
-// text content
-Dh2Element.textContent=dubai.name;
-
-
-
-// create ul
-let DulElement=document.createElement('ul');
-
-// append
-parent3.appendChild(DulElement);
-
- 
-for(let i =0;i<dubai.openningHours.length;i++){
-    // create li
-    let liElement=document.createElement('li');
-
-    // appending li
-    DulElement.appendChild(liElement);
-
-    // text content
-    liElement.textContent=`${dubai.openningHours[i]}  : ${dubai.CookieNum[i]} cookies`;
-
-}
-
-let DtotalElement=document.createElement("li");
-DulElement.appendChild(DtotalElement);
-DtotalElement.textContent= `total : ${dubai.total} cookies`;
-
-
-
-
-
-//Paris
-
-let paris= {
-    CustomersNum: [],
-    openningHours: ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'],
-    averageCookies:2.3 ,
-    minCustomers:20 ,
-    maxCustomers: 38,
-    CookieNum: [],
-    total:0,
-    name: 'Paris',
-
-    getCustomerNum: function () {
-        for (let i = 0; i < paris.openningHours.length; i++)
-
-            this.CustomersNum.push(getRndInteger(this.minCustomers, this.maxCustomers))
-
-    },
-    getCookieNum: function () {
-        for (let i = 0; i < paris.CustomersNum.length; i++) {
-          let  mult=this.CustomersNum[i] * this.averageCookies;
-         mult=Math.floor(mult)
-          this.CookieNum.push(mult);
-         this.total+=mult
-        }
-    },
-    
-
-}
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
-paris.getCustomerNum();
-console.log(paris.CustomersNum);
-
-paris.getCookieNum();
-console.log(paris.CookieNum);
-
-
- 
-console.log(paris.total)
-
-// get (from the DOM) who the parent element is going to be. where am I attaching this new element
-
-let parent4=document.getElementById('parent4');
-console.log(parent4);
-
-
-
-// creating element
-let Ph2Element=document.createElement('h2');
-
-// appending element
-parent4.appendChild(Ph2Element);
-
-// text content
-Ph2Element.textContent=paris.name;
-
-
-
-// create ul
-let PulElement=document.createElement('ul');
-
-// append
-parent4.appendChild(PulElement);
-
- 
-for(let i =0;i<paris.openningHours.length;i++){
-    // create li
-    let liElement=document.createElement('li');
-
-    // appending li
-    PulElement.appendChild(liElement);
-
-    // text content
-    liElement.textContent=`${paris.openningHours[i]}  : ${paris.CookieNum[i]} cookies`;
-
-}
-
-let PtotalElement=document.createElement("li");
-PulElement.appendChild(PtotalElement);
-PtotalElement.textContent= `total : ${paris.total} cookies`;
-
-
-
-
-//Lima
-let lima= {
-    CustomersNum: [],
-    openningHours: ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'],
-    averageCookies:4.6 ,
-    minCustomers: 2,
-    maxCustomers:16 ,
-    CookieNum: [],
-    total:0,
-    name: 'Lima',
-
-    getCustomerNum: function () {
-        for (let i = 0; i < lima.openningHours.length; i++)
-
-            this.CustomersNum.push(getRndInteger(this.minCustomers, this.maxCustomers))
-
-    },
-    getCookieNum: function () {
-        for (let i = 0; i < lima.CustomersNum.length; i++) {
-          let  mult=this.CustomersNum[i] * this.averageCookies;
-         mult=Math.floor(mult)
-          this.CookieNum.push(mult);
-         this.total+=mult
-        }
-    },
-    
-
-}
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
-lima.getCustomerNum();
-console.log(lima.CustomersNum);
-
-lima.getCookieNum();
-console.log(lima.CookieNum);
-
-
- 
-console.log(lima.total)
-
-// get (from the DOM) who the parent element is going to be. where am I attaching this new element
-
-let parent5=document.getElementById('parent5');
-console.log(parent5);
-
-
-
-// creating element
-let Lh2Element=document.createElement('h2');
-
-// appending element
-parent5.appendChild(Lh2Element);
-
-// text content
-Lh2Element.textContent=lima.name;
-
-
-
-// create ul
-let LulElement=document.createElement('ul');
-
-// append
-parent5.appendChild(LulElement);
-
- 
-for(let i =0;i<lima.openningHours.length;i++){
-    // create li
-    let liElement=document.createElement('li');
-
-    // appending li
-    LulElement.appendChild(liElement);
-
-    // text content
-    liElement.textContent=`${lima.openningHours[i]}  : ${lima.CookieNum[i]} cookies`;
-
-}
-
-let LtotalElement=document.createElement("li");
-LulElement.appendChild(LtotalElement);
-LtotalElement.textContent= `total : ${lima.total} cookies`;
-
-
-
-
-
-
-
+seattle.render()
+tokyo.render()
+dubai.render()
+lima.render()
+paris.render();
 
