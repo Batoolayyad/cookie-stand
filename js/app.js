@@ -71,7 +71,7 @@ for(let i =0;i<Seattle.openningHours.length;i++){
     ulElement.appendChild(liElement);
 
     // text content
-    liElement.textContent=`${Seattle.openningHours[i]}  : ${Seattle.CookieNum[i]}`;
+    liElement.textContent=`${Seattle.openningHours[i]}  : ${Seattle.CookieNum[i]} cookies`;
 
 }
 
@@ -160,7 +160,7 @@ for(let i =0;i<tokyo.openningHours.length;i++){
     TulElement.appendChild(liElement);
 
     // text content
-    liElement.textContent=`${tokyo.openningHours[i]}  : ${tokyo.CookieNum[i]}`;
+    liElement.textContent=`${tokyo.openningHours[i]}  : ${tokyo.CookieNum[i]} cookie`;
 
 }
 
@@ -193,7 +193,7 @@ let dubai= {
         for (let i = 0; i < dubai.CustomersNum.length; i++) {
           let  mult=this.CustomersNum[i] * this.averageCookies;
          mult=Math.floor(mult)
-          this.CookieNum.push(`${mult} cookies`);
+          this.CookieNum.push(mult);
          this.total+=mult
         }
     },
@@ -246,7 +246,7 @@ for(let i =0;i<dubai.openningHours.length;i++){
     DulElement.appendChild(liElement);
 
     // text content
-    liElement.textContent=`${dubai.openningHours[i]}  : ${dubai.CookieNum[i]}`;
+    liElement.textContent=`${dubai.openningHours[i]}  : ${dubai.CookieNum[i]} cookies`;
 
 }
 
@@ -280,7 +280,7 @@ let paris= {
         for (let i = 0; i < paris.CustomersNum.length; i++) {
           let  mult=this.CustomersNum[i] * this.averageCookies;
          mult=Math.floor(mult)
-          this.CookieNum.push(`${mult} cookies`);
+          this.CookieNum.push(mult);
          this.total+=mult
         }
     },
@@ -334,7 +334,7 @@ for(let i =0;i<paris.openningHours.length;i++){
     PulElement.appendChild(liElement);
 
     // text content
-    liElement.textContent=`${paris.openningHours[i]}  : ${paris.CookieNum[i]}`;
+    liElement.textContent=`${paris.openningHours[i]}  : ${paris.CookieNum[i]} cookies`;
 
 }
 
@@ -366,7 +366,7 @@ let lima= {
         for (let i = 0; i < lima.CustomersNum.length; i++) {
           let  mult=this.CustomersNum[i] * this.averageCookies;
          mult=Math.floor(mult)
-          this.CookieNum.push(`${mult} cookies`);
+          this.CookieNum.push(mult);
          this.total+=mult
         }
     },
@@ -420,7 +420,7 @@ for(let i =0;i<lima.openningHours.length;i++){
     LulElement.appendChild(liElement);
 
     // text content
-    liElement.textContent=`${lima.openningHours[i]}  : ${lima.CookieNum[i]}`;
+    liElement.textContent=`${lima.openningHours[i]}  : ${lima.CookieNum[i]} cookies`;
 
 }
 
