@@ -76,19 +76,22 @@ let table=document.createElement('table');
 parent.appendChild(table);
 
 
+let headerHoures=[' ','6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', 'Daily location total'];
 
 
 //creat the header for the table:
+let header= function(){
 let tr=document.createElement('tr')
 table.appendChild(tr)
-let headerHoures=[' ','6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', 'Daily location total'];
+
 for(let i=0; i< headerHoures.length;i++){
     let th=document.createElement('th')
     tr.appendChild(th)
     th.textContent=headerHoures[i]
 }
+}
 
-
+// creat the tr, td that has the nombers of cookies for all the stores 
 Stores.prototype.render= function(){
     let shopeTr=document.createElement('tr')
     table.appendChild(shopeTr)
@@ -108,11 +111,16 @@ Stores.prototype.render= function(){
     
 }
 // creat footer 
+
+let footer= function(){
+// creating the first td in the footer "total"
 let footer = document.createElement('tfoot');
 let tdFooterT=document.createElement('td');
 footer.appendChild(tdFooterT);
 tdFooterT.textContent='total'
 let sumPerHour=[];
+
+//creat the second td in the footer which has the sum number of cookes for all the stores in each houre 
 for (let i = 0; i < openningHours.length; i++) {
     let tdFooter=document.createElement('td');
 footer.appendChild(tdFooter);
@@ -122,6 +130,7 @@ tdFooter.textContent=sumPerHourT;
 }
 table.appendChild(footer);
 
+//creat the third td in the footer which has the total of the total 
  let totalOfTotal=0
 let tdFooterTotal=document.createElement('td');
 footer.appendChild(tdFooterTotal);
@@ -130,12 +139,15 @@ for (let i = 0; i < openningHours.length; i++) {
     
 }
 tdFooterTotal.textContent=totalOfTotal;
+}
 
+//calling the functions
+header();
 
-
-seattle.render()
-tokyo.render()
-dubai.render()
-lima.render()
+seattle.render();
+tokyo.render();
+dubai.render();
+lima.render();
 paris.render();
 
+footer();
