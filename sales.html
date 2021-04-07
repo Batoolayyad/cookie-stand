@@ -24,6 +24,35 @@
 </header>  
    
 <main>
+    <!-- name, minCustomers , maxCustomers, averageCookies -->
+    <main>
+        <form action="" id="storesForm">
+            <fieldset>
+                <label for="nameFeild">Name</label>
+                <input type="text" id="nameFeild" name="nameFeild" required>
+                <br>
+                <br>
+
+                <label for="minCus">Min.Customers</label>
+                <input type="number" id="minCus" name="minCus" required min="1" max="10">
+                <br>
+                <br>
+
+                <label for="maxCus">Max.Customers</label>
+                <input type="number" id="maxCus" name="maxCus" required min="5" max="15">
+                <br>
+                <br>
+
+                <label for="avgCookies">Avg.Cookies</label>
+                <input type="number" id="avgCookies" name="avgCookies" step="any" required min="0.1" max="5">
+                <br>
+                <br>
+
+                <input type="submit">
+            </fieldset>
+        </form>
+    
+    
     <div id="parent">
         
     </div>
