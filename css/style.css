@@ -163,7 +163,7 @@ header h1{
 
 header{
     width: 100%;
-    background: url(https://img.freepik.com/vecteurs-libre/fond-sous-marin-surface-eau-ocean-mer-piscine-texture-aqua-transparente-bulles-air-ondulations-rayons-soleil-tombant-modele-pour-publicite-illustration-3d-realiste_107791-4324.jpg?size=664&ext=jpg) no-repeat  center fixed; 
+    background: url(https://img.freepik.com/vecteurs-libre/fond-sous-marin-surface-eau-ocean-mer-piscine-texture-aqua-transparente-bulles-air-ondulations-rayons-soleil-tombant-modele-pour-publicite-illustration-3d-realiste_107791-4324.jpg?size=664&ext=jpg) no-repeat; 
     margin-bottom: 20px;
     padding-bottom: 10px;
     padding-top: 20px;
@@ -174,9 +174,7 @@ header{
     background-size: cover;
     
 }
-#headreImg{
-    width: 100%;
-}
+
 
 @keyframes mysalmon {
     0% {
