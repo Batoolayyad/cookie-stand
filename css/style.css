@@ -1,123 +1,290 @@
 
-div {
-
-    padding-top: 5rem;
-    padding-left: 2rem;
-}
-
-#parent table tr{
-    border:solid black 2px;
-    padding-left: 2rem;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-}
-#parent table{
-    border: black solid 2px;
-    padding-left: 2rem;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-}
-
-#parent table tr th{
-    border: black solid 2px;
-    padding-left: 2rem;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-}
-
-#parent table tfoot td{
-    border: black solid 2px;
-    padding-left: 2rem;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-}
-#parent table tr td{
-    border: black solid 2px;
-    padding-left: 2rem;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-}
-
-
 *{
     box-sizing: border-box;
 }
+#sales-header{
+padding-bottom: 40px;
+margin-bottom: 30px;
+}
+#sales-header h1{
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+#home-btn {
+    
+    border-radius:2rem;
+    border-color:rgb(9, 214, 204);
+    border-width: 3px;
+    background-color: rgb(10, 216, 206);
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+#home-btn:hover {
+    background-color:#043cb6e3 ;
+    border-color: rgb(8, 252, 240);
+    box-sizing: 4px;
+}
+
+main #parent {
+width: 50%;
+    margin: 40px;
+    font-family:cursive;
+    
+    color: #011746f5;
+    margin-top: 40px;
+}
+
+#parent table{
+    border: #02246df5  solid 3px;
+    background-color:rgb(186, 227, 250) ;
+    padding: 5px;
+}
 
 
+#parent table tr{
+    border: #02246df5 solid 4.5px;
+    padding: 10px;
+    
+}
+
+#parent table tr th{
+    border: #02246df5 solid 4.5px;
+    padding: 15px;
+
+    
+}
+
+#parent table tfoot td{
+    border: #02246df5 solid 4.5px;
+    padding: 15px;
+    
+}
+#parent table tr td{
+    border: #02246df5 solid 4.5px;
+    padding: 15px;
+    
+}
+
+main .form-contaner
+{
+    display: inline-block;
+    width: 87%;
+    margin: 50px;
+    border: solid rgb(157, 195, 238) 3.2px;
+    font-family:cursive;
+    
+}
+
+main .form-contaner form{
+    
+    
+    float: right;
+    width: 30%;
+    padding: 10px;
+    
+}
+.form-contaner .form-head{
+    float: left;
+    width:40% ;
+    padding-top: 20px;
+    padding-left: 20px;
+    text-align: center;
+    
+}
+.form-contaner .form-head h2{
+    padding-top: 20px;
+    padding-bottom:20px ;
+    font-size: 50px;
+    font-weight: bold;
+    
+    
+}
+#submit{
+    border-radius:2rem;
+    display: inline-block;
+    border-color:rgb(137, 223, 210);;
+    border-width: 4.5px;
+    background-color:#043cb6e3 ;
+    color: white;
+    padding: 15px 40px;
+    text-align: center;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+#submit:hover {
+    background-color:rgb(10, 216, 206) ;
+    border-color: rgb(8, 252, 240);
+    box-sizing: 6px;
+    
+}
 body{
-    padding:30px;
-    background-color: rgb(214, 247, 247);
-    color: rgb(8, 32, 32);
+    background-color: #02246df5;
+    color: rgb(248, 252, 252);
+    width:100%
 }
 header h1{
-    color: rgb(21, 77, 77);
+    color: #011c55f5;
     font-weight: bolder;
     text-align: center;
-background-color:  rgb(214, 247, 247);
-font-size: 3rem;
+    font-size: 3rem;
+    font-family: 'Fredoka One', cursive;
 }
 
-.theHeader {
-    width: full-width;
+#btn{
+    text-align: center;
+}
+#sales-btn {
+    
+    border-radius:2rem;
+    border-color:rgb(42, 189, 181);
+    border-width: 3px;
+    background-color: rgb(10, 216, 206);
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
     font-weight: bold;
-    font-size: 1.5rem;
-    background-color: rgb(130, 226, 230);
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    
+}
+#sales-btn:hover {
+    background-color: #02246df5;
+    border-color: rgb(8, 252, 240);
+    box-sizing: 4px;
 }
 .theHeader  a{
     color: rgb(218, 250, 248);
 }
 
-
-#headreImg {
- 
+header{
     width: 100%;
-    height: 250px;
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
+    background: url(/img/sea.jpg) no-repeat center center fixed; 
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+#headreImg{
+    width: 100%;
 }
 
+@keyframes mysalmon {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+@keyframes mychinook{
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+#chinookR {
+    animation: mychinook 8s ease-out 0s infinite;
+    padding-top:5px;
+    padding-bottom: 5px;
+    position: relative;
+}
 
-
+#salmon {
+    animation: mysalmon 8s ease-out 0s infinite;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+}
 main {
     font-size: 1.5rem;
-    padding-left: 1rem;
-
+    width: 100%;
+    
 }
-
-.intro {
-    padding-left: 1rem;
-    padding-top: 2rem;
-    line-height: 2rem;
-    padding-bottom: 2rem;
+#main-home{
+    font-family:cursive;
+    text-justify: inherit;
+    padding-top: 50px;
+    padding-left: 10px;
+    margin-top: 35px;
+   
 }
-.hours {
-    padding-left: 1rem;
-}
-
-.location{
-    line-height: 2rem;
-}
-.location ul li{
-display: list-item;
-list-style: circle;
-}
-.location h2{
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.images1 p{
-padding-bottom: 2rem;
-}
-.images1 img{
-    text-align: center;
-}
-.inlineImg img{
+#container{
     display: inline-block;
-    width: 200px;
-    height: 150px;
-    padding-left: 1rem;
+}
+
+#main-stores{
+    
+    float: right;
+    width: 40%;
+   margin-left: 20px;
+
+}
+#main-home h2{
+    font-weight: bold;
+    font-size: 2rem;
+}
+#main-home h3{
+    font-size: 15px;
+}
+#main-stores ul li{
+display: inline-block;
+padding: 5px;
+border: solid rgb(10, 115, 235);
+padding-bottom: 20px;
+margin-bottom: 50px;
+text-align: center;
+font-weight: bold;
+line-height: 30px;
+width: 53%;
+padding-top: 20px;
+margin-left: 20px;
+}
+#main-stores ul li:hover{
+    background-color: rgb(6, 139, 248);
+}
+
+
+
+#intro {
+width: 45%;
+    float: left;
+    padding: 20px;
+    line-height: 50px;
+    font-family:cursive;
+    text-justify: inherit;
+}
+#intro p{
+    width: 100%;
+    
+}
+#intro img{
+    text-align: center;
+    width: 600px;
+    height: 250px;
+}
+
+
+
+#intro .inlineImg img{
+    display: inline-block;
+    width: 195px;
+    height: 145px;
     text-align: center;
 }

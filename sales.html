@@ -4,54 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        cookie stand
+    </title>
+    <link rel="icon" href="img/fish.jpg" type="image/jpn">
     <link rel="stylesheet" href="./css/reset.css">
  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <header>
+  <header id="sales-header">
     <h1>
         The sales page 
     </h1>
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">Home page</a>
-            </li>
-        </ul>
-    </nav>
+    <button id="home-btn" onclick="location.href='index.html'" type="button">
+        Home page </button>
 
 </header>  
    
-<main>
+
     <!-- name, minCustomers , maxCustomers, averageCookies -->
     <main>
+        <div class="form-contaner">
+        <div class="form-head">
+            <h2> Add Store </h2>
+        </div>
+        
         <form action="" id="storesForm">
             <fieldset>
                 <label for="nameFeild">Name</label>
                 <input type="text" id="nameFeild" name="nameFeild" required>
                 <br>
                 <br>
-
+                
                 <label for="minCus">Min.Customers</label>
                 <input type="number" id="minCus" name="minCus" required min="1" max="10">
                 <br>
                 <br>
-
+                
                 <label for="maxCus">Max.Customers</label>
                 <input type="number" id="maxCus" name="maxCus" required min="5" max="15">
                 <br>
                 <br>
-
+                
                 <label for="avgCookies">Avg.Cookies</label>
                 <input type="number" id="avgCookies" name="avgCookies" step="any" required min="0.1" max="5">
                 <br>
                 <br>
-
-                <input type="submit">
+                    
+                <input type="submit" id="submit" value="submit">
+        
+                
             </fieldset>
         </form>
-    
+        </div>
     
     <div id="parent">
         
